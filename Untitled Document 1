@@ -27,3 +27,7 @@ ariba summary out.summary out.run1/report1.tsv out.run2/report2.tsv out.run3/rep
 sudo apt-get remove package-name
 
 tar -xvf archive.tar.gz
+
+for i in 1 2 3; do 
+touch "file$i.txt"
+done
