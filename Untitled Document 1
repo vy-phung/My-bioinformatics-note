@@ -31,3 +31,6 @@ tar -xvf archive.tar.gz
 for i in 1 2 3; do 
 touch "file$i.txt"
 done
+
+to download single file from github:
+choose raw -> copy the URL links then add wget in front of the link. 
