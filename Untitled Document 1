@@ -34,3 +34,12 @@ done
 
 to download single file from github:
 choose raw -> copy the URL links then add wget in front of the link. 
+
+raxmlHPC -m GTRGAMMA -p 12345 -s /home/vy/Downloads/snp_sites.1 -# 20 -n T6
+dna: raxmlHPC -m GTRGAMMA -p 12345 -s dna.phy -# 20 -n T6
+bootstrap:
+ raxmlHPC -m GTRGAMMA -p 12345 -b 12345 -# 100 -s /home/vy/Downloads/snp_sites.1 -n T14
+ raxmlHPC -m GTRCAT -J STRICT -p 12345 -f b -t RAxML_bestTree.T6 -z RAxML_bootstrap.T14 -n T15
+raxmlHPC-SSE3 -p 12345 -g monophylyConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T29monophyly
+raxmlHPC-SSE3 -p12345 -r backboneConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T28
+raxmlHPC-SSE3 -p 12345 -g multiConstraint.txt -m GTRGAMMA -s dna.phy -n T29
