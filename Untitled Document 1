@@ -44,3 +44,6 @@ bootstrap:
 raxmlHPC-SSE3 -p 12345 -g monophylyConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T29monophyly
 raxmlHPC-SSE3 -p12345 -r backboneConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T28
 raxmlHPC-SSE3 -p 12345 -g multiConstraint.txt -m GTRGAMMA -s dna.phy -n T29
+
+conda create -n snippy -c conda-forge -c bioconda snippy
+java -Xmx1500M -jar ~/Downloads/FigTree_v1.4.2/lib/figtree.jar
