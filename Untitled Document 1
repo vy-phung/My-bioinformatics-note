@@ -35,6 +35,7 @@ done
 to download single file from github:
 choose raw -> copy the URL links then add wget in front of the link. 
 
+sudo cp raxmlHPC* /usr/local/bin
 raxmlHPC -m GTRGAMMA -p 12345 -s /home/vy/Downloads/snp_sites.1 -# 20 -n T6
 dna: raxmlHPC -m GTRGAMMA -p 12345 -s dna.phy -# 20 -n T6
 bootstrap:
