@@ -1,0 +1,3 @@
+input fasta file:	/home/vy/Downloads/raxml_test/resfinder_test/out.resfinder.fa
+input tsv file:	/home/vy/Downloads/raxml_test/resfinder_test/out.resfinder.tsv
+genetic_code	11

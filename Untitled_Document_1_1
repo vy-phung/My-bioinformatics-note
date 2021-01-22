@@ -1,0 +1,32 @@
+wget https://raw.githubusercontent.com/CBIBUNAB/tutorials/master/genomes/GCA_{000008285.1_ASM828v1,000021185.1_ASM2118v1,000026705.1_ASM2670v1,000196035.1_ASM19603v1,000168635.2_ASM16863v2,000168815.1_ASM16881v1}_genomic.fna
+
+install Red Dog: git clone https://github.com/katholt/RedDog.git
+
+conda update --all
+conda update -n python3 --all
+raxmlHPC -m GTRGAMMAAUTO -p 12345 -s snp_sites.1 -# 20 -n test_AUTO
+
+raxmlHPC -p 12345 -m PROTGAMMAAUTO -s protein.phy -n AUTO
+
+for x in folP gyrA mtrR parC parE penA ponA porB1b rpoB rpsJ; do ariba aln2meta --variant_only aln2meta_input/$x.aln aln2meta_input/$x\_in.tsv coding aln2meta_output_tutorial16121/$x; done
+for x in 16S 23S; do ariba aln2meta --variant_only aln2meta_input/$x.aln aln2meta_input/$x\_in.tsv noncoding aln2meta_output_tutorial16121/$x; done
+cat aln2meta_output_tutorial16121/*.fa presence_absence/*.fa > Ngo_ARIBA_tutorial16121.fa
+cat aln2meta_output_tutorial16121/*.tsv presence_absence/presence_absence.tsv > Ngo_ARIBA_tutorial16121.tsv
+cat aln2meta_output_tutorial16121/*.cluster presence_absence/presence_absence.clusters > Ngo_ARIBA_tutorial16121.clusters
+ariba prepareref -f Ngo_ARIBA_tutorial16121.fa -m Ngo_ARIBA_tutorial16121.tsv --cdhit_clusters Ngo_ARIBA_tutorial16121.clusters Ngo_ARIBA_tutorial16121db
+
+ariba summary --no_tree out data/ARIBA_reports/*.tsv
+rename: (Instead of “data/ARIBA_report/ERR1067709.tsv”, we would like to simply use “ERR1067709”):
+ls data/ARIBA_reports/*.tsv | awk -F/ '{print $0,$NF}' | sed 's/.tsv$//' > data/filenames.fofn_tutorial16121
+(The file is quite simple. Column 1 is the filename, and column 2 is the name we would like to use in the output.)
+ariba summary --no_tree --fofn data/filenames.fofn_tutorial16121 out data/ARIBA_reports/*.tsv
+
+ariba summary --only_clusters 23S --preset cluster_all --no_tree --fofn data/filenames.fofn out data/ARIBA_reports/*.tsv
+ariba summary --only_clusters 23S --known_variants --no_tree --fofn data/filenames.fofn out data/ARIBA_reports/*.tsv
+
+ariba summary --row_filter n --cluster_cols assembled,known_var --only_clusters 23S,mtrR --v_groups --no_tree --fofn data/filenames.fofn summary.AZMknowngroups
+ariba micplot data/Ref/Ngo_ARIBA_tutorial16121db/ --interrupted Azithromycin data/mic_data.tsv summary.AZMknowngroups.csv micplot.AZMknowngroups
+
+plot+hline+colour:
+ariba micplot data/Ref/Ngo_ARIBAdb/ --interrupted --hlines 0.25,2 --colourmap Dark2 -number_of_colours 3 -point_size 0 Azithromycin data/mic_data.tsv summary.AZMknowngroups.csv micplot.AZMknowngroups_3colors
+ariba micplot data/Ref/Ngo_ARIBA_tutorial16121db/ --interrupted --hlines 0.25,2 --plot_types point --colourmap PiYG --colour_skip 0.35,0.65 --point_size 0 Azithromycin data/mic_data.tsv summary.AZMknowngroups.csv micplot.AZMknowngroups_colorskip

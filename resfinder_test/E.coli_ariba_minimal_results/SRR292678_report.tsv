@@ -1,0 +1,12 @@
+#ariba_ref_name	ref_name	gene	var_only	flag	reads	cluster	ref_len	ref_base_assembled	pc_ident	ctg	ctg_len	ctg_cov	known_var	var_type	var_seq_type	known_var_change	has_known_var	ref_ctg_change	ref_ctg_effect	ref_start	ref_end	ref_nt	ctg_start	ctg_end	ctg_nt	smtls_total_depth	smtls_nts	smtls_nts_depth	var_description	free_text
+aph_3____Ib.5_AF321551	aph_3____Ib.5_AF321551	1	0	16	22	aph_3____Ib	804	254	100.0	aph_3____Ib.l15.c30.ctg.1	254	1.8	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: aph(3'')-Ib_5_AF321551
+aph_6__Id.4_CP000971	aph_6__Id.4_CP000971	1	0	512	34	aph_6__Id	831	400	99.75	aph_6__Id.l15.c4.ctg.1	489	2.2	0	.	p	.	0	Y147D	NONSYN	439	441	TAC	8	10	GAC	1;1;1	G;A;C	1;1;1	.	Original name: aph(6)-Id_4_CP000971
+aph_6__Id.4_CP000971	aph_6__Id.4_CP000971	1	0	512	34	aph_6__Id	831	228	99.56	aph_6__Id.l15.c4.ctg.3	228	3.2	0	.	p	.	0	K45E	NONSYN	133	135	AAA	75	77	GAA	6;6;6	G;A;A	6;6;6	.	Original name: aph(6)-Id_4_CP000971
+blaCTX_M_88.1_FJ873739	blaCTX_M_88.1_FJ873739	1	0	0	28	blaCTX_M_-	876	155	100.0	blaCTX_M_-.l15.c4.ctg.1	155	2.9	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: blaCTX-M-88_1_FJ873739
+blaCTX_M_88.1_FJ873739	blaCTX_M_88.1_FJ873739	1	0	0	28	blaCTX_M_-	876	178	100.0	blaCTX_M_-.l15.c4.ctg.2	178	2.5	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: blaCTX-M-88_1_FJ873739
+blaCTX_M_88.1_FJ873739	blaCTX_M_88.1_FJ873739	1	0	0	28	blaCTX_M_-	876	154	100.0	blaCTX_M_-.l15.c4.ctg.3	173	2.1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: blaCTX-M-88_1_FJ873739
+blaTEM_1B.1_AY458016	blaTEM_1B.1_AY458016	1	0	27	80	blaTEM_-	861	861	99.88	blaTEM_-.l15.c4.ctg.1	1315	4.9	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: blaTEM-1B_1_AY458016
+dfrA7.1_AB161450	dfrA7.1_AB161450	1	0	0	32	dfrA-	474	195	100.0	dfrA-.l15.c4.ctg.1	205	4.4	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: dfrA7_1_AB161450
+dfrA7.1_AB161450	dfrA7.1_AB161450	1	0	0	32	dfrA-	474	73	100.0	dfrA-.l15.c4.ctg.3	123	2.9	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: dfrA7_1_AB161450
+sul1.39_AY522923	sul1.39_AY522923	1	0	0	32	sul1	828	341	100.0	sul1.l15.c30.ctg.1	341	2.9	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: sul1_39_AY522923
+sul1.39_AY522923	sul1.39_AY522923	1	0	0	32	sul1	828	280	100.0	sul1.l15.c30.ctg.2	344	2.9	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	Original name: sul1_39_AY522923
