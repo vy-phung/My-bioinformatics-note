@@ -34,11 +34,15 @@ done
 
 ariba run out.preref {SRR292770,SRR292862}_1.fastq.gz {SRR292770,SRR292862}_2.fastq.gz out.run_{SRR292770,SRR292862}
 
+ariba pubmlstspecies
+ariba pubmlstget "Staphylococcus aureus/Escherichia coli#1/Escherichia coli#2" get_mlst
+ariba run get_mlst/ref_db reads_1.fq reads_2.fq ariba_out
 sample=$(ls E.coli_fastq/*1.fastq.gz) #foward reads
 for samp in $sample; do
 samp2=${samp//1.fastq/2.fastq}  #reverse reads
 outdir=$(echo ${samp//.fastq.gz/}|cut -d/ -f2)
 ariba run --force out.preref $samp $samp2 $outdir; done
+ariba run --force get_mlst/ref_db $samp $samp2 $outdir; done
 
 ariba summary --preset minimal --no_tree E.coli_ariba_minimal_results/*report.tsv
 ariba summary --preset cluster_all --no_tree E.coli_ariba_cluster_all_results/*report.tsv
