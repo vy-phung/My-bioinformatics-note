@@ -10,7 +10,20 @@ java -Xmx1500M -jar BRIG.jar
 /home/vy/Downloads/SRR292770/SRR292770/NC_011748.fasta
 
 /home/vy/Downloads/SRR292770/SRR292770/SRR292770.REORDER.fasta.fasta
-
+- GC skew: GC skew is when the nucleotides guanine and cytosine are over- or under-abundant in a particular region of DNA or RNA. 
+In equilibrium conditions (without mutational or selective pressure and with nucleotides randomly distributed within the genome) there is an equal frequency of the four DNA 
+bases (adenine, guanine, thymine, and cytosine) on both single strands of a DNA molecule.[1] However, in most bacteria (e.g. E. coli), nucleotide compositions 
+are asymmetric between the leading strand and the lagging strand: 
+the leading strand contains more guanine (G) and thymine (T), whereas the lagging strand contains more adenine (A) and cytosine (C).
+This phenomenon is referred to as GC and AT skew. It is represented mathematically as follows:
+GC skew = (G − C)/(G + C)
+AT skew = (A − T)/(A + T)
+- GC content: In molecular biology and genetics, GC-content (or guanine-cytosine content) is the percentage of nitrogenous bases in a DNA or RNA molecule that are either 
+guanine (G) or cytosine (C). This measure indicates the proportion of G and C bases out of an implied four total bases, 
+also including adenine and thymine in DNA and adenine and uracil in RNA.
+GC-content may be given for a certain fragment of DNA or RNA or for an entire genome. 
+When it refers to a fragment, it may denote the GC-content of an individual gene or section of a gene (domain), a group of genes or gene clusters, 
+a non-coding region, or a synthetic oligonucleotide such as a primer.
 
 /home/vy/Downloads/SRR292770/SRR292770/BRIG_TEST_15122020
 
