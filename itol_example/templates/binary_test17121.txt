@@ -1,0 +1,293 @@
+DATASET_BINARY
+#Binary datasets are visualized as filled or empty symbols, depending on the value associated with a node (0 or 1).
+#Each node can have multiple associated values, and each value will be represented by a symbol (defined in FIELD_SHAPES) with corresponding color and label (from FIELD_COLORS and FIELD_LABELS).
+#Possible values (defined under DATA below) for each node are 1 (filled shapes), 0 (empty shapes) and -1 (completely omitted).
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+#SEPARATOR TAB
+#SEPARATOR SPACE
+SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL,label1
+
+#dataset color (can be changed later)
+COLOR,#ff0000
+
+#shapes for each field column; possible choices are
+#1: rectangle 
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: check mark
+#FIELD_SHAPES,1
+
+#field labels
+#FIELD_LABELS,f1
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+#define colors for each individual field column (if not defined all symbols will use the main dataset color, defined in COLOR above)
+#FIELD_COLORS,#ff0000
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+FIELD_LABELS,rl0,rl1,rl2
+FIELD_COLORS,#000,#000,#66f
+FIELD_SHAPES,4,5,6
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+SHOW_INTERNAL,0
+
+#show dashed lines between leaf labels and the dataset
+DASHED_LINES,1
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+#MARGIN,0
+#align symbols to the end of each leaf label (individual dataset field will not be aligned to each other)
+#ALIGN_TO_LABELS,1
+
+#symbol height factor; Default symbol height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+#HEIGHT_FACTOR,1
+
+#increase/decrease the spacing between individual levels, when there is more than one binary level defined 
+#SYMBOL_SPACING,10
+
+#display or hide the text labels above each field column
+#SHOW_LABELS,1
+
+#Example dataset with 4 columns (circle, left triangle, right triangle and rectangle):
+#FIELD_SHAPES,2,4,5,1
+#FIELD_LABELS,f1,f2,f3,f4
+#FIELD_COLORS,#ff0000,#00ff00,#ffff00,#0000ff
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+#node 9606 will have a filled circle, empty left triangle, nothing in the 3rd column and an empty rectangle
+#9606,1,0,-1,0
+4530,0,0,0
+45157,0,-1,-1
+237895,0,0,-1
+184922,0,1,0
+56636,0,1,0
+3702,0,-1,1
+33169,0,0,0
+222523,0,1,0
+1423,0,0,0
+216816,0,0,0
+518,0,0,0
+29461,0,1,1
+118099,0,-1,0
+6239,0,-1,1
+155892,0,-1,-1
+83560,0,-1,1
+115711,0,1,0
+115713,0,1,-1
+138677,0,1,1
+813,0,1,1
+83557,0,-1,1
+536,0,1,1
+1502,0,0,1
+1513,0,1,-1
+1717,0,0,0
+152794,0,-1,1
+882,0,0,0
+7227,0,0,-1
+1351,0,-1,-1
+217992,0,1,1
+76856,0,1,0
+35554,0,1,1
+730,0,0,0
+727,0,0,1
+64091,0,-1,0
+32025,0,1,0
+1360,0,1,1
+44275,0,-1,1
+265669,0,0,0
+187420,0,1,1
+2190,0,1,-1
+39152,0,0,-1
+10090,0,-1,-1
+83331,0,1,0
+2097,0,0,0
+267748,0,1,1
+44101,0,-1,0
+2107,0,1,-1
+160232,0,-1,1
+491,0,-1,0
+100379,0,0,-1
+747,0,0,-1
+141679,0,1,0
+837,0,-1,-1
+323,0,1,1
+29292,0,0,0
+305,0,1,0
+381,0,1,1
+1076,0,-1,-1
+781,0,1,-1
+4932,0,0,0
+209261,0,0,1
+602,0,0,-1
+70863,0,1,0
+198215,0,-1,1
+196620,0,0,-1
+158879,0,1,0
+1313,0,0,-1
+198466,0,0,0
+33903,0,1,0
+1902,0,1,-1
+111955,0,-1,-1
+1148,0,0,-1
+119072,0,0,-1
+2303,0,-1,-1
+50339,0,1,0
+2336,0,0,0
+158,0,0,1
+218496,0,1,1
+203267,0,0,-1
+666,0,1,1
+196600,0,-1,0
+36870,0,-1,-1
+66077,0,0,1
+844,0,-1,0
+92829,0,-1,-1
+183190,0,0,0
+229193,0,-1,0
+180454,0,-1,-1
+31033,0,-1,1
+7955,0,0,-1
+240015,0,1,1
+234267,0,1,-1
+59374,0,0,1
+243164,0,0,-1
+44689,0,1,0
+296543,0,-1,1
+5664,0,-1,-1
+181661,0,-1,-1
+180835,0,-1,1
+103690,0,1,-1
+63363,0,1,0
+2234,0,-1,1
+198094,0,1,-1
+226900,0,-1,0
+86665,0,1,0
+818,0,1,0
+959,0,-1,1
+519,0,-1,-1
+520,0,-1,-1
+139,0,1,-1
+375,0,-1,-1
+29459,0,1,1
+135842,0,0,0
+98794,0,0,1
+197,0,1,0
+203907,0,0,1
+182082,0,1,-1
+1097,0,0,1
+1488,0,1,-1
+1718,0,-1,1
+196627,0,1,-1
+777,0,1,0
+1299,0,-1,-1
+562,0,0,0
+83334,0,0,-1
+155864,0,0,-1
+33072,0,1,1
+210,0,-1,0
+85963,0,0,1
+9606,0,1,0
+33959,0,-1,1
+1590,0,-1,-1
+173,0,0,-1
+1642,0,1,0
+1639,0,0,-1
+2320,0,0,-1
+2214,0,0,0
+2209,0,0,-1
+1765,0,0,1
+1769,0,0,1
+1770,0,1,0
+83332,0,-1,-1
+2096,0,-1,-1
+28227,0,1,-1
+2104,0,1,1
+65699,0,-1,0
+915,0,0,-1
+182710,0,1,-1
+74109,0,1,-1
+36329,0,0,-1
+1219,0,0,0
+74547,0,0,1
+59919,0,0,0
+287,0,-1,-1
+160488,0,1,-1
+13773,0,1,0
+2261,0,1,-1
+53953,1,1,-1
+10116,1,0,1
+382,0,0,1
+117,-1,1,0
+782,0,1,0
+601,1,1,-1
+4896,0,1,-1
+623,1,1,1
+158878,0,0,0
+1282,1,-1,-1
+216495,0,1,1
+216466,-1,0,1
+1309,1,-1,1
+171101,-1,0,1
+1314,0,0,1
+186103,0,1,1
+193567,-1,1,-1
+2287,-1,0,1
+32046,1,-1,1
+84588,-1,0,0
+262724,0,0,0
+160,0,1,0
+134821,-1,-1,0
+670,0,1,0
+672,0,-1,0
+340,1,1,1
+2371,0,-1,0
+632,1,1,0
+187410,-1,1,1
+6238,-1,1,1
+9031,1,1,1
+9598,1,1,1
+214688,-1,0,-1
+
