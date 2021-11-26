@@ -1,0 +1,86 @@
+perl /home/vy/Downloads/abacas/abacas.1.3.1.pl -r /home/vy/Downloads/SRR292770/SRR292770/NC_011748.fasta -q /home/vy/Downloads/SRR292770/SRR292770/SRR292770_unordered.fasta -p 'nucmer' -c -m -b -o /home/vy/Downloads/SRR292770/SRR292770/SRR292770.REORDER.fasta
+
+
+/home/vy/anaconda3/envs/python3/bin/abacas.1.3.1.pl –r /home/vy/Downloads/SRR292770/SRR292770/NC_011748.fasta -q /home/vy/Downloads/SRR292770/SRR292770/SRR292770_unordered.fasta –c –m –b –o /home/vy/Downloads/SRR292770/SRR292770/SRR292770.REORDER.fasta
+
+Let’s say you have a directory called bin located in your Home directory in which you keep your shell scripts. To add the directory to your $PATH type in:
+export PATH="$HOME/bin:$PATH"
+
+java -Xmx1500M -jar BRIG.jar
+
+/home/vy/Downloads/SRR292770/SRR292770/NC_011748.fasta
+
+/home/vy/Downloads/SRR292770/SRR292770/SRR292770.REORDER.fasta.fasta
+fastq-dump -I --split-files SRR292770
+(create 2 file fastq: reverse and forward file of SRR292770)
+
+/home/vy/Downloads/SRR292770/SRR292770/BRIG_TEST_15122020
+
+blastn -query SRR292770.REORDER_single.fasta -db NC_011748.fasta -evalue 1 -task megablast -outfmt 6 > SRR292770.REORDER_NC_011748.crunch
+
+- ariba's code text:
+install db_resfinder: git clone https://git@bitbucket.org/genomicepidemiology/resfinder_db.git
+cd path/to/resfinder_db
+python3 INSTALL.py
+git clonehttps://bitbucket.org/genomicepidemiology/kma.git
+python3 INSTALL.py /kma/kma_index non_interactive
+ariba getref resfinder out.resfinder
+(ariba getref name_of_resource output_directory)
+ariba prepareref -f /home/vy/Downloads/resfinder/resfinder_db/out.resfinder.fa -m /home/vy/Downloads/resfinder/resfinder_db/out.resfinder.tsv out.preref
+(ariba prepareref -f sequences.fasta -m metadata.tsv prepareref.out) 
+for i in SRR292770 SRR292862; do
+ariba run out.preref "$i_{1,2}.fastq.gz" "out.run_$i"
+done
+
+ariba run out.preref {SRR292770,SRR292862}_1.fastq.gz {SRR292770,SRR292862}_2.fastq.gz out.run_{SRR292770,SRR292862}
+
+ariba pubmlstspecies
+ariba pubmlstget "Staphylococcus aureus/Escherichia coli#1/Escherichia coli#2" get_mlst
+ariba run get_mlst/ref_db reads_1.fq reads_2.fq ariba_out
+sample=$(ls E.coli_fastq/*1.fastq.gz) #foward reads
+for samp in $sample; do
+samp2=${samp//1.fastq/2.fastq}  #reverse reads
+outdir=$(echo ${samp//.fastq.gz/}|cut -d/ -f2)
+ariba run --force out.preref $samp $samp2 $outdir; done
+ariba run --force get_mlst/ref_db $samp $samp2 $outdir; done
+
+ariba summary --preset minimal --no_tree E.coli_ariba_minimal_results/*report.tsv
+ariba summary --preset cluster_all --no_tree E.coli_ariba_cluster_all_results/*report.tsv
+ariba summary out.summary out.run_{SRR292770,SRR292862,SRR292678}/report.tsv
+
+ariba summary out.summary out.run1/report1.tsv out.run2/report2.tsv out.run3/report3.tsv
+ariba summary out.summary out.run/*report.tsv
+sudo apt-get update
+sudo apt-get remove package-name
+
+tar -xvf archive.tar.gz
+
+for i in 1 2 3; do 
+touch "file$i.txt"
+done
+
+to download single file from github:
+choose raw -> copy the URL links then add wget in front of the link.
+
+make -f Makefile*.gcc
+sudo cp raxmlHPC* /usr/local/bin
+error relate to gcc, find has gcc already installed
+raxmlHPC -m GTRGAMMA -p 12345 -s /home/vy/Downloads/snp_sites.1 -# 20 -n T6
+dna: raxmlHPC -m GTRGAMMA -p 12345 -s dna.phy -# 20 -n T6
+bootstrap:
+ raxmlHPC -m GTRGAMMA -p 12345 -b 12345 -# 100 -s /home/vy/Downloads/snp_sites.1 -n T14
+ raxmlHPC -m GTRCAT -J STRICT -p 12345 -f b -t RAxML_bestTree.T6 -z RAxML_bootstrap.T14 -n T15
+raxmlHPC-SSE3 -p 12345 -g monophylyConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T29monophyly
+raxmlHPC-SSE3 -p12345 -r backboneConstraint.txt -m GTRGAMMA -s /home/vy/Downloads/snp_sites.1 -n T28
+raxmlHPC-SSE3 -p 12345 -g multiConstraint.txt -m GTRGAMMA -s dna.phy -n T29
+
+install sth:
+sudo apt-get update
+sudo apt-get install libgconf-2-4
+
+open dendroscope: bash Dendroscope_unix_3_7_3.sh
+
+add folder to github:
+go to the folder you want to upload -> git init -> git add . -> git commit -m "new folder"
+git branch (search for the branch of that folder)-> git remote add origin https://github.com/vy-phung/bioinformatics.git
+-> git push origin "name of the folder's branch" -> go to the github and pull request to add new branch to the main branch
