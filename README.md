@@ -1,2 +1,2 @@
 # My bioinformatics note
-To do this bioinformatic training, I install Oracle Virtual Box to use Ubuntu in order to run Linux command line
+To do this bioinformatics training, I install Oracle Virtual Box and use Ubuntu to run Linux command line
